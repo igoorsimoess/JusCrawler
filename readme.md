@@ -1,6 +1,8 @@
 #JusCrawler
 
-## Intenção
+## The Project
+
+This project intends to improve the experience of retrieving public data from process details
 
 
 
@@ -64,4 +66,4 @@ This enhanced the time for scraping the data by 2. The meantime for consulting i
 
 The project consults a public database of process details. In order to assert the tests for API, a file with mock data would be necessary.
 However, a better approach would be to use *jsonschema* to compare the expected data based on type. This approach is, in addition to better structured,
-more suited to the type of data. 
+more suited to the type of data. Hence, this function is being implemented in the future to have automated tests without the need for a large mock file with public data.
