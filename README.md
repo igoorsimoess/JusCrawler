@@ -32,7 +32,7 @@ python run.py
 ```
 ##### Perform a consult:
 
-Open any client service and perform a request to localhost on port 5000.
+Open any client service like Insomnia or Postman and perform a request to localhost on port 5000 using the /consult endpoint and sending the following JSON structure: 
 
 ```
 127.0.0.1:5000/consult
@@ -53,8 +53,8 @@ or simply:
 - Pytest
 
 #### Some cool features
-- In order to enhance the crawler perfomance, multiprocessing was applied in API call in order to run two spiders in parallel    
-This enhanced the time for scraping the data by 2. The meantime for consulting is between 6 - 7 seconds to retrieve the data
+- In order to enhance the crawler perfomance, multiprocessing was applied in API call in order to run two spiders in parallel.    
+This enhanced the scraping time by 2. The average time for consulting is now between 6 - 7 seconds. 
 
 - Some input checks was made: 
     - The API infers the Court (Tribunal de Justiça de Alagoas ou do Ceará) by the input pattern.
