@@ -3,8 +3,7 @@
 
 ## The Project
 
-This project intends to improve the experience of retrieving public data from process details
-
+This projects intends to improve the access for the public data by providing, developing and integrating an API + Crawler which retrieves public data from processes details of TJAL Tribunal de Justiça de Alagoas and TJCE Tribunal de Justiça do Ceará.
 
 
 ### How to run the project:
