@@ -42,6 +42,10 @@ Open any client service and perform a request to localhost on port 5000.
 "process_number":"0000000-00.0000.0.02.0000"
 "process_number":"0000000-00.0000.0.06.0000"
 ```
+or simply:
+```
+00000000000000020000 -> 20 chars
+```
 ### Some Tools in this project:
 - Scrapy
 - Selenium
