@@ -12,11 +12,12 @@ This projects intends to improve the access for the public data by providing, de
 ``` 
 git clone <this repository>
 ```
-##### Create a virtual environment
+##### Create and activate your virtual environment
 
 ```
 pip install virtualenv
 virtualenv juscrawler
+. juscrawler/bin/activate
 ```
 
 ##### install all dependecies
