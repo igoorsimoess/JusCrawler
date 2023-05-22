@@ -26,6 +26,8 @@ virtualenv juscrawler
 pip install -r requirements.txt
 ```
 
+
+
 ##### Run the API
 
 ``` 
@@ -47,6 +49,14 @@ or simply:
 ```
 00000000000000020000 -> 20 chars
 ```
+### How to test the endpoints
+##### with the API up:
+
+```
+pytest tests/test_crawler.py
+
+```
+
 ### Some Tools in this project:
 - Scrapy
 - Selenium
