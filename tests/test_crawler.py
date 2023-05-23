@@ -101,7 +101,7 @@ def test_digits_without_hiphen_and_dash():
 
 def test_consult_tjal():
     """
-    Asserts the response if a process was found in first but not in second instance
+    Asserts successfull GET request to API using TJAL parameters
     """
 
     data = {
@@ -118,7 +118,7 @@ def test_consult_tjal():
 
 def test_consult_tjce():
     """
-    Asserts the response if a process was found in first and second instance
+    Asserts successfull GET request to API using TJCE parameters 
     """
     
     data = {
