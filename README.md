@@ -3,7 +3,7 @@
 
 ## The Project
 
-This projects intends to improve the access for the public data by providing, developing and integrating an API + Crawler which retrieves public data from processes details of TJAL Tribunal de Justiça de Alagoas and TJCE Tribunal de Justiça do Ceará.
+This projects intends to improve the access to public data by providing, developing and integrating an API + Crawler which retrieves public data from processes details of TJAL Tribunal de Justiça de Alagoas and TJCE Tribunal de Justiça do Ceará.
 
 
 ### How to run the project:
@@ -71,8 +71,10 @@ This enhanced the scraping time by 2. The average time for consulting is now bet
     - The API infers the Court (Tribunal de Justiça de Alagoas ou do Ceará) by the input pattern.
     - The API considers:
         - Too many digits in input
-        - Number out of format
-        - bad formatting of JSON request 
+        - Not enough digits in input
+        - Number out of expected format 
+        - bad formatting of JSON request
+
 - Some webpages can get pretty tricky to base the script logic, hence, in order to bypass this problem a combination of scrapy and selenium was used to crawl and scrape the 4 web pages in this project (2 court instances for each)
 
 - Regex was vastly used since some CSS could be in many sorts of formats
