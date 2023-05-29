@@ -18,15 +18,15 @@ def consult():
     # following clean code parameters, treats errors before success case
     if "process_number" not in process_data:
         response = {
-            "status":"'process_number' not found in JSON request"
+            "status": "'process_number' not found in JSON request"
         }
         code = 400
         return response, code
-    
+
     else:
         process_number = process_data["process_number"]
 
-        # treat request 
+        # treat request
         response, code = return_code(process_number)
 
         if code == 400:
@@ -37,4 +37,3 @@ def consult():
             response, code = consult_process(process_number)
 
             return jsonify(response), code
-    

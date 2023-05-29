@@ -10,7 +10,7 @@ def test_process_field_not_found_in_request():
     """
 
     wrong_json_file = {
-        "processs_numberr":"12345678901234567890"
+        "processs_numberr": "12345678901234567890"
     }
 
     result = requests.post(API + '/consult', json=wrong_json_file)
@@ -25,14 +25,16 @@ def test_process_does_not_exists():
     """
 
     data = {
-        "process_number":"0710802-55.2018.8.02.0000"
+        "process_number": "0710802-55.2018.8.02.0000"
     }
-    
+
     result = requests.post(API + '/consult', json=data)
 
-    not_found = ({'Primeira Instancia':[{'data': 'Process not found'}],'Segunda Instancia':[{'data': 'Process not found'}]})
+    not_found = ({'Primeira Instancia': [
+                 {'data': 'Process not found'}], 'Segunda Instancia': [{'data': 'Process not found'}]})
     result_dict = json.loads(result.content)
     assert result_dict == not_found and result.status_code == 200
+
 
 def test_not_enough_data():
     """
@@ -40,15 +42,16 @@ def test_not_enough_data():
     """
 
     data = {
-        "process_number":"0710802.2018.8.02"
+        "process_number": "0710802.2018.8.02"
     }
     result = requests.post(API + '/consult', json=data)
     code = result.status_code
 
-    expected_response = {"status":"bad request. Not enough data"}
+    expected_response = {"status": "bad request. Not enough data"}
 
     result_dict = json.loads(result.content)
     assert result_dict == expected_response and code == 400
+
 
 def test_too_many_digits():
     """
@@ -56,11 +59,11 @@ def test_too_many_digits():
     """
 
     data = {
-        "process_number":"0710802-55.2018.8.02.00000000"
+        "process_number": "0710802-55.2018.8.02.00000000"
     }
     result = requests.post(API + '/consult', json=data)
 
-    expected_response = {"status":"bad request. Too many digits"}
+    expected_response = {"status": "bad request. Too many digits"}
     result_dict = json.loads(result.content)
 
     assert result_dict == expected_response and result.status_code == 400
@@ -72,12 +75,13 @@ def test_could_not_infer_court():
     """
 
     data = {
-        "process_number":"0710802-55.2018.8.01.0000"
+        "process_number": "0710802-55.2018.8.01.0000"
     }
 
     result = requests.post(API + '/consult', json=data)
-    
-    expected_response = {"status":"bad request. Could not infer tribunal from input"}
+
+    expected_response = {
+        "status": "bad request. Could not infer tribunal from input"}
 
     result_dict = json.loads(result.content)
 
@@ -88,9 +92,9 @@ def test_digits_without_hiphen_and_dash():
     """
     Asserts the consult even if the input comes without formatting chars
     """
-    
+
     data = {
-        "process_number":"07108025520188020001"
+        "process_number": "07108025520188020001"
     }
     result = requests.post(API + '/consult', json=data)
     code = result.status_code
@@ -99,19 +103,19 @@ def test_digits_without_hiphen_and_dash():
 
 # case: TJAL
 
+
 def test_consult_tjal():
     """
     Asserts the response if a process was found in first but not in second instance
     """
 
     data = {
-        "process_number":"0021138-09.2011.8.02.0001"
+        "process_number": "0021138-09.2011.8.02.0001"
     }
     result = requests.post(API + '/consult', json=data)
     code = result.status_code
 
     assert code == 200
-
 
 
 # case: TJCE
@@ -120,14 +124,11 @@ def test_consult_tjce():
     """
     Asserts the response if a process was found in first and second instance
     """
-    
+
     data = {
-        "process_number":"0014222-11.2016.8.06.0182"
+        "process_number": "0014222-11.2016.8.06.0182"
     }
     result = requests.post(API + '/consult', json=data)
     code = result.status_code
 
     assert code == 200
-
-
-

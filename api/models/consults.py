@@ -14,8 +14,10 @@ def consult_process(number: str) -> dict:
     process_details_first_instance = Queue()
     process_details_second_instance = Queue()
 
-    process1 = Process(target=search_justice, args=(number, process_details_first_instance ))
-    process2 = Process(target=search_justice_second_instance, args=(number, process_details_second_instance))
+    process1 = Process(target=search_justice, args=(
+        number, process_details_first_instance))
+    process2 = Process(target=search_justice_second_instance,
+                       args=(number, process_details_second_instance))
 
     process1.start()
     process2.start()
@@ -23,11 +25,9 @@ def consult_process(number: str) -> dict:
     process1.join()
     process2.join()
 
-
     result = {
         "Primeira Instancia": process_details_first_instance.get(),
         "Segunda Instancia": process_details_second_instance.get(),
     }
 
     return result, code
-
