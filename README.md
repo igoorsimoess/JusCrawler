@@ -26,6 +26,8 @@ virtualenv juscrawler
 pip install -r requirements.txt
 ```
 
+
+
 ##### Run the API
 
 ``` 
@@ -47,6 +49,14 @@ or simply:
 ```
 00000000000000020000 -> 20 chars
 ```
+### How to test the endpoints
+##### with the API up:
+
+```
+pytest tests/test_crawler.py
+
+```
+
 ### Some Tools in this project:
 - Scrapy
 - Selenium
@@ -66,9 +76,3 @@ This enhanced the scraping time by 2. The average time for consulting is now bet
 - Some webpages can get pretty tricky to base the script logic, hence, in order to bypass this problem a combination of scrapy and selenium was used to crawl and scrape the 4 web pages in this project (2 court instances for each)
 
 - Regex was vastly used since some CSS could be in many sorts of formats
-
-#### Some features in progress
-
-The project consults a public database of process details. In order to assert the tests for API, a file with mock data would be necessary.
-However, a better approach would be to use *jsonschema* to compare the expected data based on type. This approach is, in addition to better structured,
-more suited to the type of data. Hence, this function is being implemented in the future to have automated tests without the need for a large mock file with public data.
